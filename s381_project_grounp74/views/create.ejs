@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        form {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Create New Item Information</h1>
+    </div>
+    <form action="/create" method="POST">
+        <label for="itemName"><b>Item Name:</b></label>
+        <input type="text" id="itemName" name="itemName" placeholder=""><br><br>
+        <label for="itemID"><b>Item ID:</b></label>
+        <input type="text" id="itemID" name="itemID" placeholder=""><br>
+        <label for="supplier"><b>Supplier:</b></label>
+        <input type="text" id="supplier" name="supplier" placeholder=""><br><br>
+        <label for="itemQuantity"><b>Number of Items:</b></label>
+        <input type="text" id="itemQuantity" name="itemQuantity" placeholder=""><br><br>
+        <input type="submit" value="Create" /> 
+    </form>
+</body>
+</html>

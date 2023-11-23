@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            label {
+                display: inline-block;
+                width: 100px;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"] {
+                width: 200px;
+                margin-bottom: 10px;
+            }
+
+            button[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+
+            button[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Inventory (<%= inventory.length %>)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Supplier</th>
+                    <th>Number of item</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var b of inventory) { %>
+                <tr>
+                    <td><%= b.itemID %></td>
+                    <td><%= b.itemName %></td>
+                    <td><%= b.supplier %></td>
+                    <td><%= b.itemQuantity %></td>
+                    <td>
+                        <a href="/edit?itemID=<%= b.itemID %>">Update</a>
+                    </td>
+                    
+                    
+<td>
+    <a href="/delete?itemID=<%= b.itemID %>">Delete</a>
+</td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <a href="/create"><button type="button">create new item</button></a>
+    </body>
+</html>
